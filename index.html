@@ -3,175 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Loreno - Professional Resume</title>
+    <title>John Loreno - Founder & Systems Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
         :root {
-            --primary-text: #333333;
+            --primary-text: #2d2d2d;
             --secondary-text: #666666;
-            --line-color: #e0e0e0;
+            --line-color: #dfdfdf;
             --accent-color: #1a1a1a;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
-        body {
-            background-color: #f5f5f5;
-            padding: 40px 20px;
-            color: var(--primary-text);
-        }
+        body { background-color: #f8f8f8; padding: 40px 20px; color: var(--primary-text); }
 
         .resume-page {
             max-width: 850px;
             margin: 0 auto;
             background: white;
-            padding: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 60px 70px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
         }
 
-        /* Header Style from Image */
+        /* Minimalist Header */
         header {
             text-align: center;
             border-bottom: 1px solid var(--line-color);
-            padding-bottom: 30px;
+            padding-bottom: 40px;
             margin-bottom: 40px;
         }
 
         header h1 {
-            font-size: 42px;
+            font-size: 38px;
             font-weight: 700;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
         header p {
-            font-size: 14px;
-            letter-spacing: 3px;
+            font-size: 13px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--secondary-text);
+            font-weight: 400;
         }
 
         .main-content {
             display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 50px;
+            grid-template-columns: 220px 1fr;
+            gap: 60px;
         }
 
-        /* Sidebar Style */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
+        /* Left Column / Sidebar */
+        .sidebar { display: flex; flex-direction: column; gap: 40px; }
 
         .section-heading {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-heading::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background: #eee;
-            border-radius: 50%;
+            margin-bottom: 18px;
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
             display: inline-block;
         }
 
         .contact-item {
-            font-size: 13px;
-            margin-bottom: 10px;
+            font-size: 12px;
+            margin-bottom: 12px;
             color: var(--secondary-text);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .contact-item i { width: 15px; text-align: center; color: var(--accent-color); }
+        .contact-item i { font-size: 14px; color: var(--accent-color); }
 
         .list-unstyled { list-style: none; }
         .list-unstyled li {
-            font-size: 13px;
-            margin-bottom: 8px;
+            font-size: 12.5px;
+            margin-bottom: 10px;
             color: var(--secondary-text);
+            line-height: 1.4;
         }
 
-        /* Main Body Style */
-        .content-body {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
+        /* Right Column / Body */
+        .content-body { display: flex; flex-direction: column; gap: 40px; }
 
-        .summary-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--secondary-text);
-        }
+        .summary-text { font-size: 13.5px; line-height: 1.7; color: var(--secondary-text); }
 
-        .job-entry { margin-bottom: 25px; }
-        .job-header {
+        .entry { margin-bottom: 30px; }
+        .entry-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
-        .job-title { font-size: 15px; font-weight: 700; }
-        .job-date { font-size: 12px; color: var(--secondary-text); font-weight: 600; }
-        .job-company { font-size: 14px; color: var(--accent-color); font-weight: 500; margin-bottom: 10px; }
+        .entry-title { font-size: 15px; font-weight: 700; color: #000; }
+        .entry-date { font-size: 11px; color: #999; font-weight: 600; text-transform: uppercase; }
+        .entry-sub { font-size: 13px; color: #555; font-weight: 500; margin-bottom: 12px; font-style: italic; }
 
-        .job-bullets {
-            list-style: none;
-            padding-left: 15px;
-        }
-
-        .job-bullets li {
+        .bullets { list-style: none; padding-left: 15px; }
+        .bullets li {
             font-size: 13px;
             color: var(--secondary-text);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             position: relative;
+            line-height: 1.6;
         }
 
-        .job-bullets li::before {
-            content: "•";
+        .bullets li::before {
+            content: "—";
             position: absolute;
-            left: -15px;
-            color: var(--accent-color);
+            left: -18px;
+            color: #ccc;
         }
 
-        /* Download Button */
         .btn-container { text-align: center; margin-top: 30px; }
         .download-btn {
-            background: var(--accent-color);
+            background: #000;
             color: white;
-            padding: 12px 25px;
+            padding: 14px 30px;
             border: none;
-            border-radius: 4px;
+            border-radius: 2px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            transition: 0.3s;
         }
+        .download-btn:hover { background: #444; }
 
         @media print {
             .btn-container { display: none; }
             body { padding: 0; background: white; }
-            .resume-page { box-shadow: none; padding: 40px; }
+            .resume-page { box-shadow: none; padding: 40px; border: none; }
         }
     </style>
 </head>
@@ -189,76 +161,77 @@
                     <h2 class="section-heading">Contact</h2>
                     <div class="contact-item"><i class="fas fa-phone"></i> 09167443184</div>
                     <div class="contact-item"><i class="fas fa-envelope"></i> lorenojohn14@gmail.com</div>
-                    <div class="contact-item"><i class="fab fa-github"></i> github.com/BossCrayon</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> BossCrayon</div>
                     <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Bacolod City</div>
                 </section>
 
                 <section>
                     <h2 class="section-heading">Education</h2>
-                    <div style="margin-bottom: 15px;">
-                        <p style="font-size: 13px; font-weight: 700;">2022 - 2026 (Expected)</p>
-                        <p style="font-size: 13px; color: var(--secondary-text);">STI West Negros University</p>
+                    <div>
+                        <p style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">2022 — 2026</p>
+                        <p style="font-size: 12px; color: var(--secondary-text); margin-bottom: 2px;">STI West Negros University</p>
                         <p style="font-size: 12px; font-style: italic;">BS in Information Technology</p>
                     </div>
                 </section>
 
                 <section>
-                    <h2 class="section-heading">Skills</h2>
+                    <h2 class="section-heading">Technical Skills</h2>
                     <ul class="list-unstyled">
-                        <li>• Advanced Linux (Arch/Endeavour)</li>
-                        <li>• Python (OpenCV/Automation)</li>
-                        <li>• React Native & Firebase</li>
-                        <li>• Shell Scripting (Bash/Fish)</li>
-                        <li>• Physical Air-Gapping Logic</li>
-                        <li>• RAM Wiping Protocols</li>
+                        <li>Advanced Linux (Arch/Endeavour)</li>
+                        <li>Python (OpenCV & Computer Vision)</li>
+                        <li>Full-Stack (React Native / Firebase)</li>
+                        <li>Shell Scripting (Bash / Fish)</li>
+                        <li>Kernel-Level Logic & Security</li>
+                        <li>Physical Air-Gapping Hardware</li>
                     </ul>
                 </section>
             </aside>
 
             <div class="content-body">
                 <section>
-                    <h2 class="section-heading">Profile Summary</h2>
+                    <h2 class="section-heading">Profile</h2>
                     <p class="summary-text">
-                        Adaptive BSIT student specializing in Linux Systems Administration and Hardware-Software Integration. Currently developing Project Horizon and the TBMS roadmap, focusing on mitigating ransomware risks through optical-authentication and zero-heat molecular storage architecture. Seeking OJT residency at ALPHA Hub.
+                        Adaptive BSIT student specializing in Linux Systems Administration and Hardware-Software Integration. Currently developing **Project Horizon**, an optical-authentication security layer designed to mitigate ransomware risks through physical air-gapping and kernel-level triggers. Seeking an OJT residency at **ALPHA Hub** to advance system-level prototypes into commercial incubation.
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="section-heading">Experience</h2>
+                    <h2 class="section-heading">Core Focus</h2>
                     
-                    <div class="job-entry">
-                        <div class="job-header">
-                            <span class="job-title">Founder & Lead Developer</span>
-                            <span class="job-date">2025 - PRESENT</span>
+                    <div class="entry">
+                        <div class="entry-header">
+                            <span class="entry-title">Project Horizon</span>
+                            <span class="entry-date">Oct 2025 — Present</span>
                         </div>
-                        <p class="job-company">Horizon Technologies</p>
-                        <ul class="job-bullets">
-                            <li>Architecting Project Horizon: A kernel-level optical-handshake authentication system to prevent live ransomware.</li>
-                            <li>Developing the Theoretical Biocompatible Memory System (TBMS) targeting 30GHz speeds and Zero-Heat emission.</li>
-                            <li>Engineered automated "Vanish" (RAM wipe) protocols to ensure data non-persistence.</li>
+                        <p class="entry-sub">Lead Developer | Horizon Technologies</p>
+                        <ul class="bullets">
+                            <li>Architecting a kernel-level optical-handshake authentication system to prevent live ransomware attacks.</li>
+                            <li>Engineering the **"Vanish" Protocol**: an automated RAM-wipe trigger on Linux (EndeavourOS) to ensure immediate data non-persistence.</li>
+                            <li>Utilizing **Python and OpenCV** to simulate visual cryptography and lens-based decryption logic.</li>
+                            <li>Researching the **TBMS** roadmap as a future high-speed, zero-heat hardware environment for Horizon deployment.</li>
                         </ul>
                     </div>
 
-                    <div class="job-entry">
-                        <div class="job-header">
-                            <span class="job-title">Lead Mobile Developer (Capstone)</span>
-                            <span class="job-date">2024 - 2025</span>
+                    <div class="entry">
+                        <div class="entry-header">
+                            <span class="entry-title">VerifyMe (Capstone)</span>
+                            <span class="entry-date">Oct 2024 — Dec 2025</span>
                         </div>
-                        <p class="job-company">VerifyMe Project</p>
-                        <ul class="job-bullets">
-                            <li>Developed a full-stack identity verification application for PWD management using React Native.</li>
-                            <li>Integrated Firebase for real-time authentication and secure NoSQL database handling.</li>
-                        <li>Optimized cross-platform performance for low-end mobile devices.</li>
+                        <p class="entry-sub">Lead Mobile Developer | STI WNU</p>
+                        <ul class="bullets">
+                            <li>Developed a full-stack identity verification application for PWD management using **React Native**.</li>
+                            <li>Integrated **Firebase** for secure real-time authentication and NoSQL database management.</li>
+                            <li>Successfully deployed administrative and user-facing modules for academic validation.</li>
                         </ul>
                     </div>
                 </section>
 
                 <section>
-                    <h2 class="section-heading">OJT Goals (Alpha Hub)</h2>
-                    <ul class="job-bullets">
-                        <li>File a Utility Model for Optical Authentication Logic.</li>
-                        <li>Port system logic from x86 to Raspberry Pi ARM architecture.</li>
-                        <li>Utilize TUPV HIVE for physical enclosure design and 3D printing.</li>
+                    <h2 class="section-heading">OJT Objectives (ALPHA Hub)</h2>
+                    <ul class="bullets">
+                        <li>**Intellectual Property:** File a Utility Model for Optical Authentication Logic.</li>
+                        <li>**Hardware Porting:** Migrate system logic from x86 to Raspberry Pi ARM architecture.</li>
+                        <li>**Prototyping:** Utilize TUPV HIVE for physical enclosure design and 3D printing.</li>
                     </ul>
                 </section>
             </div>
@@ -266,7 +239,7 @@
     </div>
 
     <div class="btn-container">
-        <button class="download-btn" onclick="window.print()">Print / Save as PDF</button>
+        <button class="download-btn" onclick="window.print()">Print or Save as PDF</button>
     </div>
 
 </body>
