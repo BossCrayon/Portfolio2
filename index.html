@@ -3,197 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Loreno - Professional Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>John Loreno - Resume 2026</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-text: #333333;
+            --secondary-text: #666666;
+            --line-color: #e0e0e0;
+            --accent-color: #1a1a1a;
+        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            border: none;
-            outline: none;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-
-        html { font-size: 60%; }
 
         body {
-            width: 100%;
-            background-color: #f0f0f0;
-            color: #191919;
-            padding: 2rem;
+            background-color: #f5f5f5;
+            padding: 40px 20px;
+            color: var(--primary-text);
         }
 
-        .resume-container {
-            display: flex;
-            max-width: 1000px;
+        .resume-page {
+            max-width: 850px;
             margin: 0 auto;
-            background-color: #ffffff;
-            border-radius: 1rem;
-            box-shadow: 0 0 25px rgba(0,0,0,0.1);
-            overflow: hidden;
+            background: white;
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .left-column {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 3rem;
-            width: 35%;
+        /* Header Style from Image */
+        header {
+            text-align: center;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
         }
 
-        .right-column {
-            padding: 3rem;
-            width: 65%;
+        header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
 
-        .profile-picture {
-            width: 100px;
-            height: 100px;
+        header p {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--secondary-text);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 50px;
+        }
+
+        /* Sidebar Style */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .section-heading {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-heading::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: #eee;
             border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 2rem;
-            border: 2px solid #fff;
+            display: inline-block;
         }
 
-        .section-title {
-            font-size: 2rem;
+        .contact-item {
+            font-size: 13px;
+            margin-bottom: 10px;
+            color: var(--secondary-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i { width: 15px; text-align: center; color: var(--accent-color); }
+
+        .list-unstyled { list-style: none; }
+        .list-unstyled li {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: var(--secondary-text);
+        }
+
+        /* Main Body Style */
+        .content-body {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .summary-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--secondary-text);
+        }
+
+        .job-entry { margin-bottom: 25px; }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title { font-size: 15px; font-weight: 700; }
+        .job-date { font-size: 12px; color: var(--secondary-text); font-weight: 600; }
+        .job-company { font-size: 14px; color: var(--accent-color); font-weight: 500; margin-bottom: 10px; }
+
+        .job-bullets {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        .job-bullets li {
+            font-size: 13px;
+            color: var(--secondary-text);
+            margin-bottom: 6px;
+            position: relative;
+        }
+
+        .job-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: -15px;
+            color: var(--accent-color);
+        }
+
+        /* Download Button */
+        .btn-container { text-align: center; margin-top: 30px; }
+        .download-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-bottom: 2px solid #444;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            margin-top: 2rem;
         }
 
-        .left-column .section-title { border-color: #555; color: #fff; }
-
-        .contact-info p, .summary p, .skills ul li, .experience-item p, .education-item p {
-            font-size: 1.4rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item { margin-bottom: 1rem; display: flex; align-items: center; }
-        .contact-item i { margin-right: 1rem; width: 20px; }
-        .contact-item a { color: #fff; text-decoration: none; font-size: 1.3rem; }
-
-        .skills-list { list-style: none; }
-        .skills-list li { background: #333; padding: 5px 10px; border-radius: 4px; margin-bottom: 5px; font-size: 1.2rem; }
-
-        .resume-header h1 { font-size: 3.5rem; color: #191919; }
-        .resume-header p { font-size: 1.8rem; color: #666; font-weight: 500; }
-
-        .experience-item h3 { font-size: 1.8rem; color: #191919; }
-        .experience-item h4 { font-size: 1.4rem; color: #e67e22; margin-bottom: 0.5rem; }
-        
-        .experience-item ul { padding-left: 2rem; margin-bottom: 1.5rem; }
-        .experience-item ul li { font-size: 1.3rem; margin-bottom: 0.5rem; line-height: 1.4; }
-
-        .download-button {
-            display: block;
-            width: 220px;
-            margin: 2rem auto;
-            padding: 1.2rem;
-            background-color: #191919;
-            color: #fff;
-            font-size: 1.6rem;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
+        @media print {
+            .btn-container { display: none; }
+            body { padding: 0; background: white; }
+            .resume-page { box-shadow: none; padding: 40px; }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
-
 <body>
-    <div class="resume-container">
-        <div class="left-column">
-            <img class="profile-picture" src="img.jpg" alt="John Loreno">
-            
-            <h2 class="section-title">Profile</h2>
-            <p style="color: #ccc;">Adaptive BSIT student focused on Linux Systems and Hardware-Software Integration. Currently developing Project Horizon and the TBMS roadmap to revolutionize data security through optical-authentication.</p>
 
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-info">
-                <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:lorenojohn14@gmail.com">lorenojohn14@gmail.com</a></div>
-                <div class="contact-item"><i class="fas fa-phone"></i><a>09167443184</a></div>
-                <div class="contact-item"><i class="fa-brands fa-github"></i><a href="https://github.com/BossCrayon">github.com/BossCrayon</a></div>
-            </div>
+    <div class="resume-page" id="resume">
+        <header>
+            <h1>John Loreno</h1>
+            <p>Founder & Systems Developer</p>
+        </header>
 
-            <h2 class="section-title">Technical Skills</h2>
-            <ul class="skills-list">
-                <li><strong>OS:</strong> Arch/EndeavourOS, Wayland</li>
-                <li><strong>Logic:</strong> Python, OpenCV, Java</li>
-                <li><strong>Full-Stack:</strong> React Native, Firebase</li>
-                <li><strong>Tools:</strong> Git, Bash, Shell Scripting</li>
-                <li><strong>Security:</strong> Air-Gapping, RAM Wiping</li>
-            </ul>
-        </div>
+        <div class="main-content">
+            <aside class="sidebar">
+                <section>
+                    <h2 class="section-heading">Contact</h2>
+                    <div class="contact-item"><i class="fas fa-phone"></i> 09167443184</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> lorenojohn14@gmail.com</div>
+                    <div class="contact-item"><i class="fab fa-github"></i> github.com/BossCrayon</div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Bacolod City</div>
+                </section>
 
-        <div class="right-column">
-            <div class="resume-header">
-                <h1>John Loreno</h1>
-                <p>Founder & Systems Developer | BSIT Student</p>
-            </div>
+                <section>
+                    <h2 class="section-heading">Education</h2>
+                    <div style="margin-bottom: 15px;">
+                        <p style="font-size: 13px; font-weight: 700;">2022 - 2026 (Expected)</p>
+                        <p style="font-size: 13px; color: var(--secondary-text);">STI West Negros University</p>
+                        <p style="font-size: 12px; font-style: italic;">BS in Information Technology</p>
+                    </div>
+                </section>
 
-            <h2 class="section-title">Core Projects</h2>
-            
-            <div class="experience-item">
-                <h3>Horizon Technologies</h3>
-                <h4>Founder & Lead Developer | 2025 - Present</h4>
-                <ul>
-                    <li>Architecting <strong>Project Horizon</strong>: An optical-handshake authentication system to prevent live ransomware attacks.</li>
-                    <li>Developed the <strong>TBMS</strong> roadmap targeting 30GHz speeds and Zero-Heat emission using Carbon Nanotube theory.</li>
-                    <li>Engineered Linux kernel-level triggers for automated "Vanish" (RAM wipe) protocols.</li>
-                </ul>
-            </div>
+                <section>
+                    <h2 class="section-heading">Skills</h2>
+                    <ul class="list-unstyled">
+                        <li>• Advanced Linux (Arch/Endeavour)</li>
+                        <li>• Python (OpenCV/Automation)</li>
+                        <li>• React Native & Firebase</li>
+                        <li>• Shell Scripting (Bash/Fish)</li>
+                        <li>• Physical Air-Gapping Logic</li>
+                        <li>• RAM Wiping Protocols</li>
+                    </ul>
+                </section>
+            </aside>
 
-            <div class="experience-item">
-                <h3>VerifyMe (Capstone Project)</h3>
-                <h4>Lead Mobile Developer | 2024 - 2025</h4>
-                <ul>
-                    <li>Developed a full-stack identity verification app for PWD management using <strong>React Native</strong>.</li>
-                    <li>Integrated <strong>Firebase</strong> for real-time authentication and secure database handling.</li>
-                    <li>Managed end-to-end systems integration for administrative and user modules.</li>
-                </ul>
-            </div>
+            <div class="content-body">
+                <section>
+                    <h2 class="section-heading">Profile Summary</h2>
+                    <p class="summary-text">
+                        Adaptive BSIT student specializing in Linux Systems Administration and Hardware-Software Integration. Currently developing Project Horizon and the TBMS roadmap, focusing on mitigating ransomware risks through optical-authentication and zero-heat molecular storage architecture. Seeking OJT residency at ALPHA Hub.
+                    </p>
+                </section>
 
-            <h2 class="section-title">OJT Goals (ALPHA Hub)</h2>
-            <div class="experience-item">
-                <ul>
-                    <li>File a <strong>Utility Model</strong> for Optical Authentication Logic.</li>
-                    <li>Port Horizon software to <strong>Raspberry Pi ARM</strong> hardware.</li>
-                    <li>Prototype physical enclosures using <strong>TUPV HIVE</strong> 3D printing.</li>
-                </ul>
-            </div>
+                <section>
+                    <h2 class="section-heading">Experience</h2>
+                    
+                    <div class="job-entry">
+                        <div class="job-header">
+                            <span class="job-title">Founder & Lead Developer</span>
+                            <span class="job-date">2025 - PRESENT</span>
+                        </div>
+                        <p class="job-company">Horizon Technologies</p>
+                        <ul class="job-bullets">
+                            <li>Architecting Project Horizon: A kernel-level optical-handshake authentication system to prevent live ransomware.</li>
+                            <li>Developing the Theoretical Biocompatible Memory System (TBMS) targeting 30GHz speeds and Zero-Heat emission.</li>
+                            <li>Engineered automated "Vanish" (RAM wipe) protocols to ensure data non-persistence.</li>
+                        </ul>
+                    </div>
 
-            <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3>BS in Information Technology</h3>
-                <p>STI West Negros University | 2022 - 2026 (Expected)</p>
+                    <div class="job-entry">
+                        <div class="job-header">
+                            <span class="job-title">Lead Mobile Developer (Capstone)</span>
+                            <span class="job-date">2024 - 2025</span>
+                        </div>
+                        <p class="job-company">VerifyMe Project</p>
+                        <ul class="job-bullets">
+                            <li>Developed a full-stack identity verification application for PWD management using React Native.</li>
+                            <li>Integrated Firebase for real-time authentication and secure NoSQL database handling.</li>
+                        <li>Optimized cross-platform performance for low-end mobile devices.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-heading">OJT Goals (Alpha Hub)</h2>
+                    <ul class="job-bullets">
+                        <li>File a Utility Model for Optical Authentication Logic.</li>
+                        <li>Port system logic from x86 to Raspberry Pi ARM architecture.</li>
+                        <li>Utilize TUPV HIVE for physical enclosure design and 3D printing.</li>
+                    </ul>
+                </section>
             </div>
         </div>
     </div>
-    
-    <button class="download-button" onclick="downloadPDF()">Download PDF</button>
 
-    <script>
-        window.jsPDF = window.jspdf.jsPDF;
-        function downloadPDF() {
-            const element = document.querySelector('.resume-container');
-            html2canvas(element, { scale: 2 }).then(canvas => {
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'mm', 'a4');
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                pdf.save('John_Loreno_Founder_Resume.pdf');
-            });
-        }
-    </script>
+    <div class="btn-container">
+        <button class="download-btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
 </body>
 </html>
